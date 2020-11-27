@@ -1,11 +1,10 @@
-## My Project
+# AWS Proton Sample Lambda CRUD Service
 
-TODO: Fill this README out!
+This app contains the lambdas which handle the CRUD APIs for `tasks`. The infrastructure is provisioned by AWS Proton. The infrastructure for this service is managed by the AWS Proton [lambda CRUD service](https://github.com/aws-samples/aws-proton-sample-templates/tree/main/lambda-crud-svc).
 
-Be sure to:
+## Testing
 
-* Change the title in this README
-* Edit your repository description on GitHub
+Run unit tests with the `rspec` command or `make test`.
 
 ## Security
 
