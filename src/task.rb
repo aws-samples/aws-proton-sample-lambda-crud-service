@@ -23,7 +23,7 @@ class Task
   string_attr :status
   epoch_time_attr :created_at
   epoch_time_attr :updated_at
-  epoch_timr_attr :est_completion_date
+  epoch_time_attr :est_completion_date
   list_attr :raw_updates
 
 
