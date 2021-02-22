@@ -51,7 +51,7 @@ class Task
       status: self.status,
       created_at: self.created_at.utc.to_s,
       updated_at: self.updated_at.utc.to_s,
-      est_completion_date: self.est_completion_date.utc.to_s,
+      est_completion_date: self.est_completion_date&.utc&.to_s,
       raw_updates: self.raw_updates
     }.to_json
   end
