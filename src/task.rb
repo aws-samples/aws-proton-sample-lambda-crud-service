@@ -23,6 +23,9 @@ class Task
   string_attr :status
   epoch_time_attr :created_at
   epoch_time_attr :updated_at
+  epoch_time_attr :est_completion_date
+  list_attr :raw_updates
+
 
   # Validations
   validates_presence_of :title, :description, :status, :created_at, :updated_at
@@ -47,7 +50,9 @@ class Task
       description: self.description,
       status: self.status,
       created_at: self.created_at.utc.to_s,
-      updated_at: self.updated_at.utc.to_s
+      updated_at: self.updated_at.utc.to_s,
+      est_completion_date: self.est_completion_date&.utc&.to_s,
+      raw_updates: self.raw_updates
     }.to_json
   end
 
@@ -78,7 +83,9 @@ class Task
       description: description,
       status: status,
       created_at: now,
-      updated_at: now
+      updated_at: now,
+      est_completion_date: nil,
+      raw_updates: []
     )
     if item.save
       [item, nil]
